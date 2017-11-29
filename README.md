@@ -1,5 +1,3 @@
-Testing. Bowling game example.
-
 # What is testing and why do it?
 - Testing only relevant for projects that are intended to live past initial ship date.
 - Testing is a way to objectively verify quality.
@@ -35,12 +33,14 @@ Testing. Bowling game example.
 - Allows us to make changes to our code with more confidence.
 - Catches regression bugs in later versions.
 - Forces us to reason more thoroughly about our code.
+- Sleep better at night.
 
 ### Cons:
 - We write a lot more code!
 - It takes developer time away from adding exciting features.
 - Not as exciting as adding features.
 - If done incorrectly it can hamper progress.
+- Sleep worse at night.
 
 # Some Beginning Rules
 - Only ever test publicly exposed methods. Why?
@@ -61,59 +61,140 @@ Testing. Bowling game example.
 1. Return value:  
 	- calling a function returns a value. 
 	- compare it to an expected value.
-	- *Example*
-
+![](imgs/return.png)
 2. State test: 
 	- calling a function causes a side effect (like a property changes value).
 	- query the object to see if the changed state matches your expectations. 
-	- *Example*
-
+![](imgs/state.png)
 3. Interaction test:
 	- Your test calls a method and that method calls something else.
 	- Eg. Your PersonManager has a saveUser method that saves the passed in Person to UserDefaults.
-	- We don't want to use the actual UserDefaults to test this. Why not?
+	- We don't want to use the actual UserDefaults to test this. Why not?	![](imgs/interaction.png)
 
-# Dependency injection.
+# Demo
+- Return value: create a Person and return fullName
+- State test: call sut.invoice(bill) and check whether the bill got added to the bills list.
 
-- TDD changes the way you write your code.
-- When you are doing interaction testing your sut (System Under Test) may be dependent on other classes or modules.
-- Because we usually want to use fake dependencies and not real ones, we want to make sure we "inject" these dependencies rather than new them up internally.
-4 Types of Dependency Injection:
-    1. Extract and override:
-        - Example 
-        - Easy. 
-        - But you have to change your production code. Fragile? 
-        - Handy when you can't change method signatures.
-    2. Method injection: 
-        - You have the power change the signature.
-        - NextID: userDefaults (pass the property in)
-    3. Property injection:
-    4. Constructor injection:
-    - InitWithUserDefaults:
-- Prefer constructor injection
-- It makes the dependencies explicit.
+
+# Interaction Tests & Dependency injection
+- Before we talk about the 2 types of interaction tests, let's take a closer look at dependencies.
+- When you are doing interaction testing your sut (System Under Test) is dependent on other classes or modules.
+- We usually want to use fake dependencies and not real ones, we want to make sure we "inject" these dependencies rather than new them up internally.
+
+```swift
+// Wrong
+class PersonManager {
+  private let defaults: UserDefaults
+  init() {
+    defaults = UserDefaults.standard
+  }
+}
+
+// Right
+class PersonManager {
+  private let defaults: UserDefaults
+  init(defaults: UserDefaults) {
+    self.defaults = defaults
+  }
+}
+```
+
+4 Ways of Doing Dependency Injection:
+1. Extract and override:
+		- Handy when you can't change method signatures.
+    - Easy. 
+    - Fragile if you refactor the name of the extracted method.
+
+```swift
+// Wrong
+class PersonManager {
+  
+func save(person: Data){
+	let defaults = UserDefaults.standard
+	defaults.setValue(person, forKey: "personKey")
+	}
+}
+
+// Right
+class PersonManager {
+  
+  func save(person: Data){
+    defaults().setValue(person, forKey: "personKey")
+    }
+  
+  func defaults()->UserDefaults {
+    return UserDefaults.standard
+  }
+}
+
+// Subclass & Override
+
+class TestablePersonManager: PersonManager {
+  override func defaults() -> UserDefaults {
+    return //something?
+  }
+}
+
+``` 
+2. Method injection: 
+	- Use if you have the power change the signature.
+```swift
+class PersonManager {
+  
+func save(person: Data, with defaults: UserDefaults){
+defaults.setValue(person, forKey: "personKey")
+}
+  
+}
+```
+3. Property injection:
+```swift
+class PersonManager {
+  
+  var defaults: UserDefaults?
+  
+  func save(person: Data){
+    defaults?.setValue(person, forKey: "personKey")
+  }
+  
+}
+```
+		
+4. Constructor injection:
+	- Passes in the dependencies at initialization.
+	- Prefer constructor injection because it makes the dependencies more explicit.
+
+```swift
+class PersonManager {
+  
+  var defaults: UserDefaults
+  
+  init(defaults: UserDefaults) {
+    self.defaults = defaults
+  }
+  
+  func save(person: Data){
+    defaults.setValue(person, forKey: "personKey")
+  }
+  
+}
+```	
 
 Stubs Vs Mocks:
 
+- We usually don't want to inject an actual defaults object or whatever other dependency. We want a fake of some kind.
+- There are 2 fundamental types of fake objects: Stubs and Mocks.
+- The difference has to do with what object the test queries. 
+- Tests query the sut for stubs and the sut queries the mock for mocks.
 
+![](imgs/stub.png)
 
+![](imgs/mock.png)
 
-
-@testable removes need to make everything public or open
-
-XCTAssert different types.
-
-- Provides documentation
-
--   Things we shouldn’t test in unit tests, Apple’s code. We don’t want to do actual network requests. 
-- Write tests against someone else’s code
-
-What is TDD?
-- write tests first.
-- red/green/refactor
-- Write a failing test first
-- Start with the most degenerate test.
-
+#### Note
+- `@testable import NameOfTarget` removes need to make everything public or open in the file, or add the file to the test target.
 
 # Resources
-- if you want to start with TDD start with a codekata link https://qualitycoding.org/tdd-kata/ 
+- if you want to start with TDD start with a codekata [link](https://qualitycoding.org/tdd-kata/)
+- Jon Reid's [Quality Coding](https://qualitycoding.org) is a good site to start.
+- A lot of the ideas in this lecture are inspired by [this]() video.
