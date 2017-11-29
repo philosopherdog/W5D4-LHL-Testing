@@ -9,7 +9,6 @@
 import Foundation
 
 
-
 class Person: NSCoding {
   
   // MARK: Encoding/Decoding
@@ -46,6 +45,14 @@ class Person: NSCoding {
     get {
       return "\(firstName) \(lastName)"
     }
+  }
+  
+  //MARK: Bills
+  
+  var bills = [Bill]()
+  
+  func pay(_ bill: Bill) {
+    bills.append(bill)
   }
 
 }
