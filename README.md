@@ -13,8 +13,18 @@ Testing. Bowling game example.
 - We are only concerned about *unit testing*, today.
 - Xcode has an [interface testing framework](https://developer.apple.com/library/content/documentation/DeveloperTools/Conceptual/testing_with_xcode/chapters/09-ui_testing.html) 
 - Unit testing tests small units of code, usually functions/methods.
-- Unit tests are distinct from *integration tests* which test larger chunks of code and how they function together. 
-- Unit testing is sometimes also called TDD (test driven development), but TDD is the discipline of writing unit tests first.
+- Unit tests are distinct from *functional tests* which test larger chunks of code and how they function together. So, for instance in a *functional test* you might hit the actual network. 
+
+
+# TDD
+- TDD is the discipline of writing unit tests first.
+- Sometimes called "Red, Green, Refactor".
+- You start by writing a single failing test.
+- Then you write the simplest code to make that test pass.
+- Finally, you refactor your production code and test code.
+
+![](imgs/tdd.png)
+
 
 # (Dis)advantages of Unit Testing
 ### Pros: 
