@@ -185,7 +185,8 @@ Stubs Vs Mocks:
 - We usually don't want to inject an actual defaults object or whatever other dependency. We want a fake of some kind.
 - There are 2 fundamental types of fake objects: Stubs and Mocks.
 - The difference has to do with what object the test queries. 
-- Tests query the sut for stubs and the sut queries the mock for mocks.
+- Tests query the sut for stubs.
+- For mocks the tests query the mock object.
 
 ![](imgs/stub.png)
 
