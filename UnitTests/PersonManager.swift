@@ -10,17 +10,8 @@ import Foundation
 
 class PersonManager {
   
-  var defaults: UserDefaults? {
-    get {
-      if self.defaults == nil {
-        return UserDefaults.standard
-      }
-      return self.defaults
-    }
-  }
-  
   func save(person: Data, with defaults: UserDefaults){
-    defaults.setValue(person, forKey: "personKey")
+    defaults.set(person, forKey: "personKey")
   }
   
 }

@@ -11,11 +11,13 @@ import Foundation
 class BillComputer {
   
   func compute(_ bills: [Bill])-> Double {
+    // Pretend this has to gather some data from a network
    return doSomeNetworkRequest(with: bills)
   }
   
   private func doSomeNetworkRequest(with bills: [Bill])-> Double {
-    return  bills.reduce(0) { (result, bill) -> Double in
+    // reduce loops through the array of bills
+    return  bills.reduce(0.0) { (result, bill) -> Double in
       bill.amount + result
     }
   }

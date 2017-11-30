@@ -7,7 +7,7 @@
 //
 
 import Foundation
-@testable import Pedometer
+@testable import UnitTests
 
 
 final class MockUserDefaults: UserDefaultsProtocol {
@@ -18,17 +18,16 @@ final class MockUserDefaults: UserDefaultsProtocol {
     MockUserDefaults.timesInitialized += 1
   }
   
-  var values: [String:Any] = [:] {
-    didSet {
-      print(#line, values[Constant.kConfettiOnDatesKey] ?? "No value!!")
-    }
+  var values: [String: Data] = [:]
+  
+  // Here's where we override the UserDefault's Methods defined in the Protocol
+  
+  func set(_ value: Any?, forKey defaultName: String) {
+    guard let result = value as? Data else { return }
+    values[defaultName] = result
   }
   
-  func set(_ value: Any?, forKey key: String) {
-    values[key] = value
-  }
-  
-  func value(forKey key: String) -> Any? {
-    return values[key]
+  func data(forKey: String)-> Data? {
+    return values[forKey]
   }
 }

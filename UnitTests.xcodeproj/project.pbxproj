@@ -7,12 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA00CFD91FCF1D6C006AFA11 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00CFD81FCF1D6C006AFA11 /* Person.swift */; };
+		AA00CFDB1FCF1D97006AFA11 /* PersonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00CFDA1FCF1D97006AFA11 /* PersonTests.swift */; };
+		AA00CFDD1FCF4385006AFA11 /* PersonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00CFDC1FCF4385006AFA11 /* PersonManager.swift */; };
+		AA00CFDF1FCF7031006AFA11 /* UserDefaultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00CFDE1FCF7031006AFA11 /* UserDefaultsProtocol.swift */; };
+		AA00CFE11FCF70FC006AFA11 /* MockUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00CFE01FCF70FC006AFA11 /* MockUserDefaults.swift */; };
+		AA00CFE31FCF71A2006AFA11 /* PersonManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00CFE21FCF71A2006AFA11 /* PersonManagerTests.swift */; };
+		AA00CFE51FCF726D006AFA11 /* BillComputerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00CFE41FCF726D006AFA11 /* BillComputerTests.swift */; };
+		AA00CFE71FCF7367006AFA11 /* BillComputer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00CFE61FCF7367006AFA11 /* BillComputer.swift */; };
+		AA00CFE91FCF747C006AFA11 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00CFE81FCF747C006AFA11 /* Bill.swift */; };
 		AA3880B51FCF192900A046DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3880B41FCF192900A046DB /* AppDelegate.swift */; };
 		AA3880B71FCF192900A046DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3880B61FCF192900A046DB /* ViewController.swift */; };
 		AA3880BA1FCF192900A046DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA3880B81FCF192900A046DB /* Main.storyboard */; };
 		AA3880BC1FCF192900A046DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA3880BB1FCF192900A046DB /* Assets.xcassets */; };
 		AA3880BF1FCF192900A046DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA3880BD1FCF192900A046DB /* LaunchScreen.storyboard */; };
-		AA3880CA1FCF192900A046DB /* Basics.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3880C91FCF192900A046DB /* Basics.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +34,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA00CFD81FCF1D6C006AFA11 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		AA00CFDA1FCF1D97006AFA11 /* PersonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTests.swift; sourceTree = "<group>"; };
+		AA00CFDC1FCF4385006AFA11 /* PersonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonManager.swift; sourceTree = "<group>"; };
+		AA00CFDE1FCF7031006AFA11 /* UserDefaultsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsProtocol.swift; sourceTree = "<group>"; };
+		AA00CFE01FCF70FC006AFA11 /* MockUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockUserDefaults.swift; sourceTree = "<group>"; };
+		AA00CFE21FCF71A2006AFA11 /* PersonManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonManagerTests.swift; sourceTree = "<group>"; };
+		AA00CFE41FCF726D006AFA11 /* BillComputerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillComputerTests.swift; sourceTree = "<group>"; };
+		AA00CFE61FCF7367006AFA11 /* BillComputer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillComputer.swift; sourceTree = "<group>"; };
+		AA00CFE81FCF747C006AFA11 /* Bill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
 		AA3880B11FCF192900A046DB /* UnitTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnitTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA3880B41FCF192900A046DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA3880B61FCF192900A046DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -34,7 +51,6 @@
 		AA3880BE1FCF192900A046DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA3880C01FCF192900A046DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA3880C51FCF192900A046DB /* UnitTestsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTestsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA3880C91FCF192900A046DB /* Basics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basics.swift; sourceTree = "<group>"; };
 		AA3880CB1FCF192900A046DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +99,11 @@
 				AA3880BB1FCF192900A046DB /* Assets.xcassets */,
 				AA3880BD1FCF192900A046DB /* LaunchScreen.storyboard */,
 				AA3880C01FCF192900A046DB /* Info.plist */,
+				AA00CFD81FCF1D6C006AFA11 /* Person.swift */,
+				AA00CFDC1FCF4385006AFA11 /* PersonManager.swift */,
+				AA00CFDE1FCF7031006AFA11 /* UserDefaultsProtocol.swift */,
+				AA00CFE61FCF7367006AFA11 /* BillComputer.swift */,
+				AA00CFE81FCF747C006AFA11 /* Bill.swift */,
 			);
 			path = UnitTests;
 			sourceTree = "<group>";
@@ -90,8 +111,11 @@
 		AA3880C81FCF192900A046DB /* UnitTestsTests */ = {
 			isa = PBXGroup;
 			children = (
-				AA3880C91FCF192900A046DB /* Basics.swift */,
 				AA3880CB1FCF192900A046DB /* Info.plist */,
+				AA00CFE01FCF70FC006AFA11 /* MockUserDefaults.swift */,
+				AA00CFDA1FCF1D97006AFA11 /* PersonTests.swift */,
+				AA00CFE21FCF71A2006AFA11 /* PersonManagerTests.swift */,
+				AA00CFE41FCF726D006AFA11 /* BillComputerTests.swift */,
 			);
 			path = UnitTestsTests;
 			sourceTree = "<group>";
@@ -199,8 +223,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA00CFDD1FCF4385006AFA11 /* PersonManager.swift in Sources */,
+				AA00CFE71FCF7367006AFA11 /* BillComputer.swift in Sources */,
+				AA00CFD91FCF1D6C006AFA11 /* Person.swift in Sources */,
 				AA3880B71FCF192900A046DB /* ViewController.swift in Sources */,
+				AA00CFE91FCF747C006AFA11 /* Bill.swift in Sources */,
 				AA3880B51FCF192900A046DB /* AppDelegate.swift in Sources */,
+				AA00CFDF1FCF7031006AFA11 /* UserDefaultsProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,7 +237,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA3880CA1FCF192900A046DB /* Basics.swift in Sources */,
+				AA00CFE31FCF71A2006AFA11 /* PersonManagerTests.swift in Sources */,
+				AA00CFE11FCF70FC006AFA11 /* MockUserDefaults.swift in Sources */,
+				AA00CFDB1FCF1D97006AFA11 /* PersonTests.swift in Sources */,
+				AA00CFE51FCF726D006AFA11 /* BillComputerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
