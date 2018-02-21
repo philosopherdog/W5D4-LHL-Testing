@@ -1,69 +1,63 @@
-//
-//  Person.swift
-//  UnitTests
-//
-//  Created by steve on 2017-11-29.
-//  Copyright © 2017 steve. All rights reserved.
-//
-
 import Foundation
 
+/// Person model object that knows how to encode/decode
 
-class Person: NSObject, NSCoding {
+
+final class Person: NSObject, NSCoding {
+  
+  // MARK: Properties
+  
+  internal let firstName: String
+  internal let lastName: String
+  
+  internal var fullName: String {
+    get {
+      return "\(firstName) \(lastName)"
+    }
+  }
   
   // MARK: Encoding/Decoding
   
-  struct Key {
+  internal struct Key {
     // Used to avoid string literal keys
     
     static let firstName = "firstNameKey"
     static let lastName = "lastNameKey"
   }
   
-  func encode(with aCoder: NSCoder) {
+  internal func encode(with aCoder: NSCoder) {
     aCoder.encode(self.firstName, forKey: Key.firstName)
     aCoder.encode(self.lastName, forKey: Key.lastName)
   }
   
-  required convenience init(coder aDecoder: NSCoder) {
-    let fn = aDecoder.decodeObject(forKey: Key.firstName) as? String
-    let ln = aDecoder.decodeObject(forKey: Key.lastName) as? String
-    // if fn/ln are nil then initialize with ""
-    self.init(firstName: fn ?? "", lastName: ln ?? "")
+  internal required convenience init(coder aDecoder: NSCoder) {
+    let firstName = aDecoder.decodeObject(forKey: Key.firstName) as? String
+    let lastName = aDecoder.decodeObject(forKey: Key.lastName) as? String
+    // nil coalescing operator http://bit.ly/2sEUR80
+    self.init(firstName: firstName ?? "", lastName: lastName ?? "")
   }
   
-  // MARK: Init
+  // MARK: Designated Initializer
   
-  init(firstName: String, lastName: String) {
+  internal init(firstName: String, lastName: String) {
     self.firstName = firstName
     self.lastName = lastName
   }
   
-  // MARK: Properties
-  
-  let firstName: String
-  let lastName: String
-  
-  var fullName: String {
-    get {
-      return "\(firstName) \(lastName)"
-    }
-  }
-  
   //MARK: Bills (State Test)
   
-  var bills = [Bill]()
+  internal var bills = [Bill]()
   
-  func pay(_ bill: Bill) {
+  internal func pay(_ bill: Bill) {
     bills.append(bill)
   }
   
-  //MARK: Total Owing (Stub)
+  //MARK: Total Owing (Stub Test)
   
-  var totalOwing: Double?
+  internal var totalOwing: Double?
   
-  func totalOwing(for bills: [Bill], with billComputer: BillComputer) {
+  internal func totalOwing(for bills: [Bill], with billComputer: BillComputer) {
     self.totalOwing = billComputer.compute(bills)
   }
-
+  
 }

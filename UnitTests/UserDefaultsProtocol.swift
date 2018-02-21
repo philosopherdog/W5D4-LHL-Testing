@@ -1,21 +1,16 @@
-//
-//  UserDefaultsProtocol.swift
-//  Pedometer
-//
-//  Created by steve on 2017-08-13.
-//  Copyright © 2017 steve. All rights reserved.
-//
-
 import Foundation
 
-// This Protocol uses the same method signatures of UserDefaults which allows us to override them in the Mock object
+// UserDefaultsProtocol lists 2 (there are others) method signatures of Apple's actual UserDefaults class.
+// By "extracting" this protocol we can create a new fake object that we control for testing purposes
 
 protocol UserDefaultsProtocol: class {
   func set(_ value: Any?, forKey defaultName: String)
   func data(forKey: String)-> Data?
 }
 
-// UserDefaults is wrapped with our protocol, and it already implements the methods!
+// Apple's UserDefaults class now conforms to out protocol!
+// Apple's class  already implements the methods! So we don't need to do anything.
+
 extension UserDefaults: UserDefaultsProtocol {}
 
 

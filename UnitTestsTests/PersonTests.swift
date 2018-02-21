@@ -1,11 +1,3 @@
-//
-//  PersonTests.swift
-//  UnitTestsTests
-//
-//  Created by steve on 2017-11-29.
-//  Copyright © 2017 steve. All rights reserved.
-//
-
 import XCTest
 @testable import UnitTests
 
@@ -48,12 +40,6 @@ class PersonTests: XCTestCase {
   }
   
 }
-
-
-
-
-
-
 
 
 
