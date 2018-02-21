@@ -7,6 +7,14 @@ class PersonTests: XCTestCase {
   
   // 1. Return Value
   
+  func test_fullName() {
+    // Arrange
+    // Act
+    // Assert
+  }
+  
+  // 2. State Test
+  
   func test_Person_init_called_once() {
     // Arrange
     // Act
@@ -18,14 +26,6 @@ class PersonTests: XCTestCase {
     // Act
     // Assert
   }
-  
-  func test_fullName() {
-    // Arrange
-    // Act
-    // Assert
-  }
-  
-  // State Test
   
   func test_init_bill_called_once() {
     // Arrange
