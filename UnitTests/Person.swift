@@ -1,11 +1,3 @@
-//
-//  Person.swift
-//  UnitTests
-//
-//  Created by steve on 2017-11-29.
-//  Copyright © 2017 steve. All rights reserved.
-//
-
 import Foundation
 
 
@@ -65,5 +57,5 @@ class Person: NSObject, NSCoding {
   func totalOwing(for bills: [Bill], with billComputer: BillComputer) {
     self.totalOwing = billComputer.compute(bills)
   }
-
+  
 }

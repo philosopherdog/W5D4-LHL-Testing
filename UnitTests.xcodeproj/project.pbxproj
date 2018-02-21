@@ -72,6 +72,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA241698203DE7E1002EE999 /* Supplementary Files */ = {
+			isa = PBXGroup;
+			children = (
+				AA3880B41FCF192900A046DB /* AppDelegate.swift */,
+				AA3880B61FCF192900A046DB /* ViewController.swift */,
+				AA3880B81FCF192900A046DB /* Main.storyboard */,
+				AA3880BB1FCF192900A046DB /* Assets.xcassets */,
+				AA3880BD1FCF192900A046DB /* LaunchScreen.storyboard */,
+				AA3880C01FCF192900A046DB /* Info.plist */,
+			);
+			path = "Supplementary Files";
+			sourceTree = "<group>";
+		};
 		AA3880A81FCF192900A046DB = {
 			isa = PBXGroup;
 			children = (
@@ -93,12 +106,7 @@
 		AA3880B31FCF192900A046DB /* UnitTests */ = {
 			isa = PBXGroup;
 			children = (
-				AA3880B41FCF192900A046DB /* AppDelegate.swift */,
-				AA3880B61FCF192900A046DB /* ViewController.swift */,
-				AA3880B81FCF192900A046DB /* Main.storyboard */,
-				AA3880BB1FCF192900A046DB /* Assets.xcassets */,
-				AA3880BD1FCF192900A046DB /* LaunchScreen.storyboard */,
-				AA3880C01FCF192900A046DB /* Info.plist */,
+				AA241698203DE7E1002EE999 /* Supplementary Files */,
 				AA00CFD81FCF1D6C006AFA11 /* Person.swift */,
 				AA00CFDC1FCF4385006AFA11 /* PersonManager.swift */,
 				AA00CFDE1FCF7031006AFA11 /* UserDefaultsProtocol.swift */,
@@ -387,7 +395,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6D3DA9G4XW;
-				INFOPLIST_FILE = UnitTests/Info.plist;
+				INFOPLIST_FILE = "UnitTests/Supplementary Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.UnitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -402,7 +410,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6D3DA9G4XW;
-				INFOPLIST_FILE = UnitTests/Info.plist;
+				INFOPLIST_FILE = "UnitTests/Supplementary Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.UnitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
