@@ -193,4 +193,4 @@ Stubs Vs Mocks:
 # Resources
 - if you want to start with TDD start with a codekata [link](https://qualitycoding.org/tdd-kata/)
 - Jon Reid's [Quality Coding](https://qualitycoding.org) is a good site to start.
-- A lot of the ideas in this lecture are inspired by [this](https://www.youtube.com/watch?v=Jzlz3Bx-NzM&t=1661s) video.
+- A lot of the ideas in this lecture are inspired by [this](https://www.youtube.com/watch?v=Jzlz3Bx-NzM) video.
