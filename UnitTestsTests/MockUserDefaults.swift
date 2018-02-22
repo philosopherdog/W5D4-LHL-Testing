@@ -15,8 +15,8 @@ final class MockUserDefaults: UserDefaultsProtocol {
   // Here's where we override the UserDefault's Methods defined in the Protocol
   
   func set(_ value: Any?, forKey defaultName: String) {
-    guard let result = value as? Data else { return }
-    values[defaultName] = result
+    guard let value = value as? Data else { return }
+    values[defaultName] = value
   }
   
   func data(forKey: String)-> Data? {

@@ -109,9 +109,9 @@
 				AA241698203DE7E1002EE999 /* Supplementary Files */,
 				AA00CFD81FCF1D6C006AFA11 /* Person.swift */,
 				AA00CFDC1FCF4385006AFA11 /* PersonManager.swift */,
-				AA00CFDE1FCF7031006AFA11 /* UserDefaultsProtocol.swift */,
 				AA00CFE61FCF7367006AFA11 /* BillComputer.swift */,
 				AA00CFE81FCF747C006AFA11 /* Bill.swift */,
+				AA00CFDE1FCF7031006AFA11 /* UserDefaultsProtocol.swift */,
 			);
 			path = UnitTests;
 			sourceTree = "<group>";

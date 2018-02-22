@@ -12,7 +12,14 @@ class BillComputerTests: XCTestCase {
   }
   
   func test_billComputer_sets_totalOwing() {
-    
+    // Arrange
+    let sut = Person(firstName: "", lastName: "")
+    // Act
+    sut.totalOwing(for: [], with: BillComputerStub())
+    let result = sut.totalOwing!
+    let expected = 100.0
+    // Assert
+    XCTAssertEqual(result, expected)
   }
   
 }
